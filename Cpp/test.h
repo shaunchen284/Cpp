@@ -6,11 +6,9 @@
 #define CPP_TEST_H
 
 
-
 class test {
 
 };
-
 
 
 #endif //CPP_TEST_H
