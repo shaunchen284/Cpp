@@ -1,0 +1,52 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "g++.exe build and debug active file",
+            "type": "cppdbg",
+            "request": "launch",
+            //"program": "${fileDirname}\\${fileDirname}.exe",  如果你创建代码时有中文，就选下面的
+            "program": "${fileDirname}\\test.exe", 
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "externalConsole": true, //不用vscode集成的终端输出文件，默认的集成终端运行代码可能会出现问题，如果不想就把true改成false
+            "MIMode": "gdb",
+            "miDebuggerPath": "D:\\x86_64-8.1.0-release-posix-sjlj-rt_v6-rev0\\mingw64\\bin\\gdb.exe",  //自己的编译器位置（后面加\\bin\\gdb.exe）,这里跟默认的文件位置不一样，/是双斜杠\\
+            "setupCommands": [
+                {
+                    "description": "为 gdb 启用整齐打印",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ],
+            "preLaunchTask": "task g++"
+        },
+        {
+            "name": "(gdb) 启动",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "输入程序名称，例如 ${workspaceFolder}/a.exe",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${D:\\git\\CPPP\\.vscode}",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "miDebuggerPath": "/path/to/gdb",
+            "setupCommands": [
+                {
+                    "description": "为 gdb 启用整齐打印",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                },
+                {
+                    "description": "将反汇编风格设置为 Intel",
+                    "text": "-gdb-set disassembly-flavor intel",
+                    "ignoreFailures": true
+                }
+            ]
+        }
+    ]
+}
